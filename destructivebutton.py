@@ -1,3 +1,4 @@
+#ive said this many times but please run this script as admin. it wont work without admin permissions.
 import time
 import random
 import os
