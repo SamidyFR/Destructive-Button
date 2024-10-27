@@ -28,7 +28,7 @@ basically, the script hates your Computer.
 1. Download a virtual machine, a good one is [VirtualBox](https://www.virtualbox.org/) (HIGHLY RECCOMENDED, PLEASE DO NOT USE THIS SCRIPT ON YOUR MAIN OR WORK COMPUTER.)
 2. Download [Python](https://www.python.org/)
 3. Download the script
-4. run it
+4. run it (MAKE SURE TO RUN IT AS ADMIN. IT WONT WORK PROPERLY IF NOT)
 
 And thats it!
 
