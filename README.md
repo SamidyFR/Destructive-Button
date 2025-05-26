@@ -1,4 +1,4 @@
-# WARNING: this script is Highly dangerous and could ruin your computer in seconds. please use this script in an isolated enviroment. (I AM NOT RESPONSIBLE FOR ANY DAMAGE THIS SCRIPT MAY CAUSE. USE THIS AT YOUR OWN RISK)
+WARNING: this script is Highly dangerous and could ruin your computer in seconds. please use this script in an isolated enviroment. (I AM NOT RESPONSIBLE FOR ANY DAMAGE THIS SCRIPT MAY CAUSE. USE THIS AT YOUR OWN RISK)
 
 
 # Destructive Button
